@@ -1,0 +1,16 @@
+[project]
+name = "neuroplan"
+version = "0.3.1"
+description = "Reproducible LLM-planned analysis of Allen Neuropixels unit metrics"
+requires-python = ">=3.12,<3.14"
+dependencies = ["matplotlib>=3.10,<4", "numpy>=2,<3", "openai>=2,<3", "pandas>=2.2,<3", "pydantic>=2.11,<3"]
+
+[project.optional-dependencies]
+notebook = ["ipykernel>=6,<8", "jupyterlab>=4,<5"]
+
+[project.scripts]
+neuroplan = "neuroplan.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

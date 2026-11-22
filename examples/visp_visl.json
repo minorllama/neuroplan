@@ -1,0 +1,13 @@
+{
+  "analysis": "paired",
+  "stimulus": "drifting_gratings",
+  "regions": [
+    "VISp",
+    "VISl"
+  ],
+  "metric": "g_osi_dg",
+  "statistic": "median",
+  "threshold": null,
+  "min_units_per_region": 1,
+  "quality": "screened"
+}
