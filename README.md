@@ -57,9 +57,18 @@ The query `env -u VIRTUAL_ENV VLLM_BASE_URL=http://127.0.0.1:8000/v1 uv run --lo
 with generated results in `runs/vllm-paired`. 
 
 
-## Understanding the analysis 
+### The analysis plan
 
-To do. 
+The [prompt](https://github.com/minorllama/neuroplan/blob/main/neuroplan/planners.py#L14-L42) for the large language model specifies for the natural language query is mapped on to the dataset. For example, the prompt contains the `mean_paired_difference` specified in the above example:
+```
+Operations: summary gives pooled mean or median by region; paired takes a mean or median
+within each region of each shared session and reports the mean of the paired differences;
+fraction_above gives the fraction of units strictly above an explicit numeric threshold.
+Use paired for two-region comparisons explicitly matched within recording sessions.
+```
+
+From the model's response an analysis plans is created (which maps to a specified [function](https://github.com/minorllama/neuroplan/blob/main/neuroplan/analysis.py#L51-L70) for the above example) and executed generating the output of the example: neuroplan is the translation engine between natural languages and analysis. 
+
 
 
 
